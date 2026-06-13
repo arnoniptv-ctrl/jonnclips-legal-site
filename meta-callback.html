@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Conectando Meta - JonnClips Uploader</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="page article">
+    <h1>Conectando Meta</h1>
+    <p class="muted">Redirecionando para a Central de Clips local...</p>
+    <p>Se nada acontecer, verifique se a Central de Clips esta aberta em <code>http://127.0.0.1:8891</code>.</p>
+    <p><a id="manualLink" href="http://127.0.0.1:8891/api/oauth/meta/callback">Continuar manualmente</a></p>
+  </main>
+  <script>
+    (function () {
+      var target = "http://127.0.0.1:8891/api/oauth/meta/callback" + window.location.search + window.location.hash;
+      var link = document.getElementById("manualLink");
+      if (link) link.href = target;
+      window.location.replace(target);
+    })();
+  </script>
+</body>
+</html>
